@@ -1,0 +1,171 @@
+:root {
+    --card-color: #fff;
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+} 
+
+body {
+    background: linear-gradient( 0deg, var(--soft-blue), var(--soft-violet));
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    min-height: 130vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    min-width: 340px;
+    width: 70vw;
+    min-height: 300px;
+    padding-bottom: 35px;
+    border-radius: 20px;
+    background-color: var(--card-color);
+    background-image: url('./images/bg-pattern-mobile.svg');
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.card .card-logo {
+    top: calc(100% - 100% - 110px);
+    left: calc(100% / 2 - 150px);
+    position: absolute;
+}
+
+.card .card-content {
+    margin-top: 150px;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .card-content .card-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--very-dark-desaturated-blue);
+}
+
+.card .card-content .card-items {
+    list-style: none;
+}
+
+.card .card-content .card-item {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.card .card-content .card-item p{
+    font-size: 0.8rem;
+    line-height: 20px;
+    color: var(--dark-grayish-blue);
+    width: 95%;
+    max-height: 0;
+    transition: max-height 0.1s ease-out;
+    overflow: hidden;
+}
+
+.card .card-content .card-item.selected {
+    padding-bottom: 15px;
+}
+
+.card .card-content .card-item.selected p{
+    max-height: 200vh;
+    transition: max-height 0.25s ease-in;
+}
+
+.card .card-content .card-item .card-item-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card .card-content .card-item .card-item-title img{
+    height: 0.7em;
+}
+
+.card .card-content .card-item .card-item-title strong{
+    font-size: 0.9rem;
+    color: var(--very-dark-grayish-blue);
+    font-weight: 400;
+}
+
+.card .card-content .card-item.selected .card-item-title strong {
+    font-weight: 700;
+}
+
+.card .card-content .card-item.selected .card-item-title img {
+    transform: rotate(180deg);
+}
+
+.card .card-content .card-item .card-item-title:hover {
+    cursor: pointer;
+}
+
+.card .card-content .card-item .card-item-title:hover strong{
+    color: var(--soft-red);
+}
+
+@media(min-width: 1440px){
+    body {
+        min-height: 100vh;
+    }
+
+    .card {
+        background-image:  
+            url('./images/illustration-woman-online-desktop.svg'),
+            url('./images/bg-pattern-desktop.svg');
+        background-position: -90px 70px, -580px -300px;
+        min-height: 500px;
+        max-width: 1000px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    .card .card-logo {
+        top: 205px;
+        left: -100px;
+    }
+
+    .card .card-content {
+        width: 40%;
+        padding: 0 0 20px 0;
+        margin: 70px 90px 0 0;
+    }
+
+    .card .card-content .card-title {
+        align-self: flex-start;
+        margin-bottom: 40px;
+    }
+}
+
+/* By frontend mentor */
+.attribution { 
+    margin-top: 20px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
