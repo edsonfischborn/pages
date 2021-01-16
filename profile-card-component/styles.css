@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(185, 75%, 39%);
+    font-size: 18px;
+    font-family: 'Kumbh Sans', sans-serif;
+    letter-spacing: 1.2px;
+    background-image:
+        url('./images/bg-pattern-top.svg'),
+        url('./images/bg-pattern-bottom.svg');
+    background-position:top -650px left -720px, top 320px right -720px;
+    background-repeat: no-repeat;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+/* Util */
+.flex {
+    display: flex;
+}
+
+.f-column {
+    flex-direction: column;
+}
+
+.fa-center {
+    align-items: center;
+}
+
+.fj-center{
+    justify-content: center;
+}
+
+.fj-between {
+    justify-content: space-between;
+}
+
+.c-dark {
+    color: hsl(229, 23%, 23%);
+}
+
+.c-light {
+    color: hsl(227, 10%, 46%);
+}
+
+/* Card */
+.card {
+    background-color: #fff;
+    height: 360px;
+    width: 325px;
+    border-radius: 20px;
+}
+
+.card .card-header {
+    background-image: url('./images/bg-pattern-card.svg');
+    background-repeat: no-repeat;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-size: cover;
+    height: 35%;
+}
+
+.card .card-header .card-profile {
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-top: 40%;
+}
+
+.card .card-body {
+    height: 40%;
+}
+
+.card .card-body .card-title {
+    margin-top: 50px;
+}
+
+.card .card-body p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.card .card-footer {
+    border-top: 1px solid rgba(227, 227, 227);
+    padding: 30px 40px 30px 40px;
+    height: 25%;
+}
+
+.card .card-footer span {
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+@media(min-width: 1440px){
+    body {
+        background-position:top -500px left -340px, top 420px right -250px;
+    }
+
+    .card {
+        height: 420px;
+        width: 400px;
+    }
+}
+
+/* By frontend mentor */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
