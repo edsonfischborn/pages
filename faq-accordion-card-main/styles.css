@@ -23,7 +23,7 @@ body {
     background: linear-gradient( 0deg, var(--soft-blue), var(--soft-violet));
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 12px;
-    min-height: 130vh;
+    min-height: 150vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,8 +78,9 @@ body {
     line-height: 20px;
     color: var(--dark-grayish-blue);
     width: 95%;
+    opacity: 0.4;
     max-height: 0;
-    transition: max-height 0.1s ease-out;
+    transition: .7s ease;
     overflow: hidden;
 }
 
@@ -88,8 +89,8 @@ body {
 }
 
 .card .card-content .card-item.selected p{
-    max-height: 200vh;
-    transition: max-height 0.25s ease-in;
+    max-height: 200px;
+    opacity: 1;
 }
 
 .card .card-content .card-item .card-item-title{
@@ -111,6 +112,10 @@ body {
 
 .card .card-content .card-item.selected .card-item-title strong {
     font-weight: 700;
+}
+
+.card .card-content .card-item .card-item-title img {
+    transition: .8s;
 }
 
 .card .card-content .card-item.selected .card-item-title img {
