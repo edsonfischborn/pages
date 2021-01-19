@@ -170,23 +170,24 @@ header > aside {
     flex-direction: row;
     justify-content: center;
     height: 50px;
-    width: 400px;
+    width: 450px;
   }
 
   .review strong {
     margin-left: 20px;
+    font-size:  0.8rem;
   }
 
   .review:nth-child(1){
-    margin-left: calc(100% - 480px);
+    margin-left: calc(100% - 530px);
   }
 
   .review:nth-child(2){
-    margin-left: calc(100% - 440px);
+    margin-left: calc(100% - 490px);
   }
 
   .review:nth-child(3){
-    margin-left: calc(100% - 400px);
+    margin-left: calc(100% - 450px);
   }
 }
 
