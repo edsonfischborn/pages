@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --card-bg: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    background-color: var(--light-grayish-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.card {
+    background-color: var(--card-bg);
+    height:515px;
+    width: 325px;
+    border-radius: 10px;
+}
+
+.card .thumb {
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+}
+
+.card .thumb img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card .content {
+    padding: 35px;
+}
+
+.card .content .title {
+    font-size: 1rem;
+    color:var(--very-dark-grayish-blue);
+}
+
+.card .content p {
+    color: var(--desaturated-dark-blue);
+    margin: 15px 0 30px 0;
+    font-size: 0.81rem;
+    line-height: 20px;
+}
+
+.card .content .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.card .content .card-footer .profile{
+    display: flex;
+}
+
+.card .content .card-footer .profile img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.card .content .card-footer .profile .user {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card .content .card-footer .profile .user strong {
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+}
+
+.card .content .card-footer .profile .user span {
+    color: var(--grayish-blue);
+    font-size: 0.8rem;
+}
+
+.card .content .card-footer .share-btn{
+    color: var(--desaturated-dark-blue);
+    border-radius: 50%;
+    background-color: var(--light-grayish-blue);
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    outline:none;
+}
+
+.card .content .card-footer .share-btn.active{
+    background-color: var(--desaturated-dark-blue);
+    color: var(--card-bg);
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+}
+
+.card .content .card-footer .share-options {
+    background-color: var(--very-dark-grayish-blue);
+    display: none;
+    position: absolute;
+    height: 70px;
+    width: 325px;
+    left: -35px;
+    top: 0;
+    padding-left: 35px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.card .content .card-footer .share-options span {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--grayish-blue);
+}
+
+.card .content .card-footer .share-options a {
+    color: var(--card-bg);
+    font-size: 1.3rem;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.card .content .card-footer .share-options.active {
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    margin-top: 10px;
+}
+
+@media(min-width: 900px){
+    .card{
+        width: 730px;
+        height: 280px;
+        display: flex;
+    }
+
+    .card .thumb{
+        height: 100%;
+    }
+
+    .card .thumb img {
+        width: auto;
+        height: 100%
+    }
+
+    .card .content .title { 
+        font-size: 1.3rem;
+    }
+
+    .card .content .card-footer .share-btn.active {
+        margin: 0;
+    }
+
+    .card .content .card-footer .share-options {
+        width: 245px;
+        border-radius: 10px;
+        height: 60px;
+        top: -80px;
+        left: calc(100% - 245px / 2 - 20px);
+    }
+
+    .card .content .card-footer .share-options.active::after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: -12px;
+        left: calc(50% - 10px);
+        border-left: 13px solid transparent;
+        border-right: 13px solid transparent;
+        border-top: 12px solid var(--very-dark-grayish-blue);
+    }
+}
+
+/* By frontend mentor */
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
