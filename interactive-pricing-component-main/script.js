@@ -1,11 +1,6 @@
 const slider = document.querySelector("#slider");
 const price = document.querySelector("#price");
 
-window.onload = () => {
-  handlePrice();
-  setSliderProgress();
-};
-
 // Change price
 function handlePrice() {
   const value = Math.round(5.33 * slider.value).toFixed(2);
@@ -44,3 +39,6 @@ slider.addEventListener("touchend", handleDown);
 slider.addEventListener("touchcancel", handleUpAndLeave);
 slider.addEventListener("touchleave", handleUpAndLeave);
 slider.addEventListener("touchstart", setSliderProgress);
+
+handlePrice();
+setSliderProgress();

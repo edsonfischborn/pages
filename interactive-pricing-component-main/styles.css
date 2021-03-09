@@ -327,3 +327,13 @@ header p {
 .attribution a { 
     color: hsl(228, 45%, 44%);
 }
+
+/* By https://webaim.org/techniques/css/invisiblecontent/ */
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
