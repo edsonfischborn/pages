@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <header>
+      <h2>Simple, traffic-based pricing</h2>
+      <p>Sign-up for our 30-day trial. No credit card required.</p>
+    </header>
+
+    <main class="card">
+      <div class="card__header">
+        <strong class="card__title">100k Pageviews</strong>
+        <input
+          type="range"
+          class="range card__range"
+          id="slider"
+          min="1"
+          max="5"
+          value="3"
+        />
+        <div class="card__price">
+          <strong id="price" class="card__price__value">$16.00</strong>
+          <span> / month</span>
+        </div>
+
+        <div class="card__plan">
+          <label for="planSelection">Monthly Billing</label>
+          <div class="switch">
+            <input class="switch__input" id="planSelection" type="checkbox" />
+            <div class="switch__background"></div>
+            <div class="switch__slider"></div>
+          </div>
+          <div class="card__plan__discount">
+            <label for="planSelection">Yearly Billing</label>
+            <span class="badge">-25%</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="card__horizontal-line" />
+
+      <div class="card__footer">
+        <div class="card__features">
+          <div class="card__feature">
+            <img
+              class="card__feature__icon"
+              src="./images/icon-check.svg"
+              alt="check"
+            />
+            <span>Unlimited websites</span>
+          </div>
+          <div class="card__feature">
+            <img
+              class="card__feature__icon"
+              src="./images/icon-check.svg"
+              alt="check"
+            />
+            <span>100% data ownership</span>
+          </div>
+          <div class="card__feature">
+            <img
+              class="card__feature__icon"
+              src="./images/icon-check.svg"
+              alt="check"
+            />
+            <span>Email reports</span>
+          </div>
+        </div>
+        <button class="card__action">Start my trial</button>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/edsonfischborn">Édson Fischborn</a>.
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
