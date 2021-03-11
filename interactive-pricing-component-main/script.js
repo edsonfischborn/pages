@@ -1,24 +1,52 @@
-const slider = document.querySelector("#slider");
-const price = document.querySelector("#price");
+const htmlSlider = document.querySelector("#slider");
+const htmlPlanSelection = document.querySelector("#planSelection");
+const htmlViewsCount = document.querySelector("#viewsCount");
+const htmlPrice = document.querySelector("#price");
+
+const dataSlider = [
+  {
+    basePrice: 8,
+    viewsCount: "8k",
+  },
+  {
+    basePrice: 12,
+    viewsCount: "50k",
+  },
+  {
+    basePrice: 16,
+    viewsCount: "100k",
+  },
+  {
+    basePrice: 24,
+    viewsCount: "500k",
+  },
+  {
+    basePrice: 36,
+    viewsCount: "1M",
+  },
+];
 
 // Change price
 function handlePrice() {
-  const value = Math.round(5.33 * slider.value).toFixed(2);
-  price.innerText = `$${String(value).padStart(5, "0")}`;
+  let { basePrice, viewsCount } = dataSlider[slider.value];
+  if (htmlPlanSelection.checked) basePrice -= basePrice * 0.25;
+
+  htmlPrice.innerText = `$${String(basePrice.toFixed(2)).padStart(5, "0")}`;
+  htmlViewsCount.innerText = viewsCount;
 }
 
-slider.addEventListener("input", (e) => {
-  handlePrice();
-  setSliderProgress();
-});
+htmlSlider.addEventListener("input", handlePrice);
+htmlPlanSelection.addEventListener("change", handlePrice);
+handlePrice();
 
-// Range chrome style
+// Range google chrome style
 let isChanging = false;
 
 const setSliderProgress = () => {
   const percent =
-    ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
-  slider.style.setProperty("--webkitProgressPercent", `${percent}%`);
+    ((htmlSlider.value - htmlSlider.min) / (htmlSlider.max - htmlSlider.min)) *
+    100;
+  htmlSlider.style.setProperty("--webkitProgressPercent", `${percent}%`);
 };
 
 const handleMove = () => {
@@ -28,17 +56,18 @@ const handleMove = () => {
 const handleUpAndLeave = () => (isChanging = false);
 const handleDown = () => (isChanging = true);
 
-slider.addEventListener("mousemove", handleMove);
-slider.addEventListener("mousedown", handleDown);
-slider.addEventListener("mouseup", handleUpAndLeave);
-slider.addEventListener("mouseleave", handleUpAndLeave);
-slider.addEventListener("click", setSliderProgress);
+htmlSlider.addEventListener("mousemove", handleMove);
+htmlSlider.addEventListener("mousedown", handleDown);
+htmlSlider.addEventListener("mouseup", handleUpAndLeave);
+htmlSlider.addEventListener("mouseleave", handleUpAndLeave);
+htmlSlider.addEventListener("click", setSliderProgress);
 
-slider.addEventListener("touchmove", handleMove);
-slider.addEventListener("touchend", handleDown);
-slider.addEventListener("touchcancel", handleUpAndLeave);
-slider.addEventListener("touchleave", handleUpAndLeave);
-slider.addEventListener("touchstart", setSliderProgress);
+htmlSlider.addEventListener("touchmove", handleMove);
+htmlSlider.addEventListener("touchend", handleDown);
+htmlSlider.addEventListener("touchcancel", handleUpAndLeave);
+htmlSlider.addEventListener("touchleave", handleUpAndLeave);
+htmlSlider.addEventListener("touchstart", setSliderProgress);
 
-handlePrice();
+htmlSlider.addEventListener("input", setSliderProgress);
+
 setSliderProgress();

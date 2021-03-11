@@ -20,15 +20,18 @@
 
     <main class="card">
       <div class="card__header">
-        <strong class="card__title">100k Pageviews</strong>
+        <div class="card__title">
+          <strong id="viewsCount">100k</strong>
+          <strong>Pageviews</strong>
+        </div>
         <label for="slider" class="sr-only">Monthly Billing</label>
         <input
           type="range"
           class="range card__range"
           id="slider"
-          min="1"
-          max="5"
-          value="3"
+          min="0"
+          max="4"
+          value="2"
         />
         <div class="card__price">
           <strong id="price" class="card__price__value">$16.00</strong>
@@ -49,7 +52,7 @@
         </div>
       </div>
 
-      <hr class="card__horizontal-line" />
+      <hr class="card__horizontal__line" />
 
       <div class="card__footer">
         <div class="card__features">
